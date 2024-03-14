@@ -1,0 +1,6 @@
+@TizzaApi_HostAddress = http://localhost:5089
+
+GET {{TizzaApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
