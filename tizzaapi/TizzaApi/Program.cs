@@ -13,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IServPizzaria, ServPizzaria>();
+builder.Services.AddScoped<IServPromover, ServPromover>();
+
 builder.Services.AddScoped<IServPizza, ServPizza>();
 
 builder.Services.AddDbContext<DataContext>(option => option.UseSqlite(

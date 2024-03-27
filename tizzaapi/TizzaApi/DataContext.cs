@@ -16,7 +16,7 @@ namespace TizzaApi
             
         }
 
-        public DbSet<Pizzaria> pizzarias { get; set; }
+        public DbSet<Pizzaria> Pizzaria { get; set; }
         public DbSet<Promover> Promover { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

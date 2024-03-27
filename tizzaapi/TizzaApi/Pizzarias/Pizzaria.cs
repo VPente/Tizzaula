@@ -7,6 +7,8 @@
         public string Endereco { get; set; }
         public string Telefone { get; set; }
         public string Responsavel { get; set; }
+        public decimal ValorPromover { get; set; }
+        public DateTime DataVigenciaPromover { get; set; }
 
     }
 }

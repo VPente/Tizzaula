@@ -6,6 +6,7 @@ namespace TizzaApi.Pizzarias
     {
         void InserirPizzaria(Pizzaria pizzaria);
         void AlterarPizzaria(int id, AlterarPizzariaDTO alterarPizzariaDto);
+        public void RegistrarPatrocinio(int codigoPizzaria, decimal valorPromover, DateTime dataVigenciaPromover);
     }
 
     public class ServPizzaria: IServPizzaria
@@ -25,7 +26,7 @@ namespace TizzaApi.Pizzarias
 
         public void AlterarPizzaria(int id,AlterarPizzariaDTO alterarPizzariaDto)
         {
-            var pizzaria = _dataContext.pizzarias.Where(p => p.Id == id).FirstOrDefault();
+            var pizzaria = _dataContext.Pizzaria.Where(p => p.Id == id).FirstOrDefault();
 
             pizzaria.Nome = alterarPizzariaDto.Nome;
             pizzaria.Endereco = alterarPizzariaDto.Endereco;
@@ -33,6 +34,14 @@ namespace TizzaApi.Pizzarias
             pizzaria.Responsavel = alterarPizzariaDto.Responsavel;
 
             _dataContext.SaveChanges();
+        }
+
+        public void RegistrarPatrocinio(int codigoPizzaria, decimal valorPromover, DateTime dataVigenciaPromover)
+        {
+            var pizzaria = _dataContext.Pizzaria.Where(p => p.Id == codigoPizzaria).FirstOrDefault();
+
+            pizzaria.ValorPromover = valorPromover;
+            pizzaria.DataVigenciaPromover = dataVigenciaPromover;
         }
     }
 }
